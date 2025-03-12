@@ -21,6 +21,25 @@ app.get('/', async (req, res) => {
             return;
         }
     }
+    app.use(cors());
+
+    app.get('/', (req, res) => {});
+
+    app.get('/home', (req, res) => {
+        res.json({ message: 'Welcome to Home!' });
+    });
+
+    app.get('/about', (req, res) => {
+        res.json({ message: 'About Us' });
+    });
+
+    app.get('/contact', (req, res) => {
+        res.json({ message: 'Contact Us' });
+    });
+
+    app.get('/blog', (req, res) => {
+        res.json({ message: 'Our Blog' });
+    });
 
     await run();
     res.json({ status: "mongo is running" });
